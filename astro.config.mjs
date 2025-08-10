@@ -1,10 +1,7 @@
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
-import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
-   vite: {
-    plugins: [tailwindcss()],
-  },
-   site: 'https://yourdomain.com',
-  integrations: [sitemap()]
+  // Your other configurations...
+  base: '/huangwei', // Must match your repository name
+  site: 'https://asithakuruppu.github.io/huangwei',
 });
