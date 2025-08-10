@@ -36,6 +36,10 @@
 :root {
  /* Typography stylistic sets for Inter */
   font-feature-settings: "tnum" 1, "zero" 1, "cv01" 1, "cv09" 1, "cv02" 1, "cv03" 1, "cv04" 1, "ss08" 1, "dlig" 1, "cv06" 1, "cv10" 1, "cv13" 1;
+  --font-serif: 'Instrument Serif', serif;
+  --font-sans: 'Inter', sans-serif;
+  --color-base-light: #eeede8;
+  --color-base-medium: #f7f7f5;
 }
 
 @supports (font-variation-settings: normal) {
