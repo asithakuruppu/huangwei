@@ -971,19 +971,19 @@ const podcastData = [
 ---
 <Wrapper variant="standard">
   <div
-    class="grid grid-cols-2 gap-2 md:gap-4 py-4 text-sm border-b border-neutral-200 dark:border-neutral-900 text-black dark:text-neutral-400 font-serif"
+    class="grid grid-cols-2 gap-2 md:gap-4 py-4 text-sm border-b border-neutral-200 border-neutral-900 text-black text-neutral-400 font-serif"
   >
     <!-- <div class="">Date</div> -->
     <div class=" text-xl">Project</div>
     <div class="text-right text-xl">Year</div>
     <!-- <div class="text-right hidden md:block text-neutral-500">Duration</div> -->
   </div>
-  <div class="project-list divide-y divide-neutral-200 dark:divide-neutral-900">
+  <div class="project-list divide-y divide-neutral-200 divide-neutral-900">
     <!-- Project rows -->
     {
       podcastData.map((podcast, index) => (
         <div class="group">
-          <div class="grid grid-cols-2 gap-2 md:gap-4 font-serif py-4 cursor-pointer items-center text-black dark:text-neutral-400">
+          <div class="grid grid-cols-2 gap-2 md:gap-4 font-serif py-4 cursor-pointer items-center text-black text-neutral-400">
             <!-- <div>
               <Text tag="p" variant="textBase" class="italic text-neutral-500">
                 {podcast.date}
@@ -1019,7 +1019,7 @@ const podcastData = [
                   <!-- <div class="flex">
                     <button
                       id={`openModal-${index}`}
-                      class="text-xs h-10 bg-base-medium dark:bg-neutral-900 dark:text-white flex items-center gap-4 text-black rounded-full px-6"
+                      class="text-xs h-10 bg-base-medium bg-neutral-900 text-white flex items-center gap-4 text-black rounded-full px-6"
                     >
                       Read notes and Transcript <span>→</span>
                     </button>
@@ -1070,17 +1070,17 @@ const podcastData = [
           </div>
           <div
             id={`modal-${index}`}
-            class="fixed inset-0 z-50 bg-base-light/10 dark:bg-neutral-900/80 overflow-y-auto scrollbar-hide h-full w-full hidden opacity-0 transition-opacity duration-300 ease-in-out"
+            class="fixed inset-0 z-50 bg-base-light/10 bg-neutral-900/80 overflow-y-auto scrollbar-hide h-full w-full hidden opacity-0 transition-opacity duration-300 ease-in-out"
           >
-            <div class="absolute top-12 left-0 right-0 max-w-3xl mx-auto bg-base-medium dark:bg-neutral-900 shadow ring ring-neutral-200 dark:ring-neutral-800 transition-all duration-300 ease-in-out transform translate-y-full">
+            <div class="absolute top-12 left-0 right-0 max-w-3xl mx-auto bg-base-medium bg-neutral-900 shadow ring ring-neutral-200 ring-neutral-800 transition-all duration-300 ease-in-out transform translate-y-full">
               <button
                 id={`closeModal-${index}`}
-                class="absolute top-8 right-8 text-xs text-black dark:text-neutral-400"
+                class="absolute top-8 right-8 text-xs text-black text-neutral-400"
               >
                 Close
               </button>
               <div class="p-8 lg:p-12">
-                <div class="flex items-center gap-2 text-black dark:text-neutral-400">
+                <div class="flex items-center gap-2 text-black text-neutral-400">
                   <Text tag="p" variant="textBase" class="font-serif italic">
                     <span>{podcast.year}</span>
                   </Text>
@@ -1100,47 +1100,47 @@ const podcastData = [
                 <div class="relative mt-8">
                   <div class="overflow-hidden">
                     <div class="flex transition-transform duration-300 ease-in-out" id={`carousel-${index}`}>
-      {Array.isArray(podcast.images) && podcast.images.length > 0 ? (
-        podcast.images.map((image, imgIndex) => (
-          <div class="min-w-full">
-            <Image
-              src={image.path}
-              alt={podcast.title}
-              width="800"
-              height="600"
-              class="w-full h-80 md:h-96 object-cover object-center"
-            />
-          </div>
-        ))
-      ) : (
-        <div class="min-w-full">
-          <Image
-            src={podcast.imagePath}
-            alt={podcast.title}
-            width="800"
-            height="600"
-            class="w-full h-80 md:h-96 object-cover object-center"
-          />
-        </div>
-      )}
-    </div>
+                      {Array.isArray(podcast.images) && podcast.images.length > 0 ? (
+                        podcast.images.map((image, imgIndex) => (
+                          <div class="min-w-full">
+                            <Image
+                              src={image.path}
+                              alt={podcast.title}
+                              width="800"
+                              height="600"
+                              class="w-full h-80 md:h-96 object-cover object-center"
+                            />
+                          </div>
+                        ))
+                      ) : (
+                        <div class="min-w-full">
+                          <Image
+                            src={podcast.imagePath}
+                            alt={podcast.title}
+                            width="800"
+                            height="600"
+                            class="w-full h-80 md:h-96 object-cover object-center"
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                  {Array.isArray(podcast.images) && podcast.images.length > 1 && (
-    <>
-      <button
-        class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-neutral-900/50 text-white p-2 rounded-full"
-        onclick={`carouselPrev(${index})`}
-      >
-        ←
-      </button>
-      <button
-        class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-neutral-900/50 text-white p-2 rounded-full"
-        onclick={`carouselNext(${index})`}
-      >
-        →
-      </button>
-    </>
-  )}
+                    <>
+                      <button
+                        class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-neutral-900/50 text-white p-2 rounded-full"
+                        onclick={`carouselPrev(${index})`}
+                      >
+                        ←
+                      </button>
+                      <button
+                        class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-neutral-900/50 text-white p-2 rounded-full"
+                        onclick={`carouselNext(${index})`}
+                      >
+                        →
+                      </button>
+                    </>
+                  )}
                 </div>
                 <!-- <div class="grid grid-cols-1 mt-12 lg:grid-cols-2 gap-12">
                   <Wrapper variant="prose">
