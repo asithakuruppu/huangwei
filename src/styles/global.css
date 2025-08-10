@@ -31,17 +31,50 @@
   --color-base-light:#eeede8; 
   --color-base-medium:#f7f7f5;
 }
+/* Add this to your global CSS file or in a <style> tag */
 
-/* CSS */
+/* Force light mode colors regardless of system preference */
 :root {
- /* Typography stylistic sets for Inter */
-  font-feature-settings: "tnum" 1, "zero" 1, "cv01" 1, "cv09" 1, "cv02" 1, "cv03" 1, "cv04" 1, "ss08" 1, "dlig" 1, "cv06" 1, "cv10" 1, "cv13" 1;
+  color-scheme: light only;
   --font-serif: 'Instrument Serif', serif;
   --font-sans: 'Inter', sans-serif;
   --color-base-light: #eeede8;
   --color-base-medium: #f7f7f5;
 }
 
+/* Override any potential dark mode styles */
+html {
+  color-scheme: light only;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Force override common dark mode elements */
+* {
+  border-color: rgb(229 229 229) !important; /* neutral-200 */
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Specific overrides for your component classes */
+.text-neutral-400 {
+  color: rgb(16 16 16) !important;
+}
+
+.border-neutral-200 {
+  border-color: rgb(229 229 229) !important;
+}
+
+.bg-base-medium {
+  background-color: #f7f7f5 !important;
+}
+
+.bg-base-light {
+  background-color: #eeede8 !important;
+}
 @supports (font-variation-settings: normal) {
   /* Use variable font if supported */
   :root {
