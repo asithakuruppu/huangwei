@@ -5,21 +5,21 @@
 @layer components {
   .prose-styles {
     /* List text color for light theme */
-    @apply prose-ul:text-neutral-500 dark:prose-ul:text-neutral-200;
+    @apply prose-ul:text-neutral-500 prose-ul:text-neutral-200;
     /* Base layout classes */
     @apply prose max-w-3xl pt-0 mx-auto;
     /* Styles for links */
-    @apply prose-a:text-black dark:prose-a:text-white;
+    @apply prose-a:text-black prose-a:text-white;
     /* Paragraph text color for light and dark themes */
-    @apply prose-p:text-neutral-500 dark:prose-p:text-neutral-300;
+    @apply prose-p:text-neutral-500 prose-p:text-neutral-300;
     /* Inline code text color for light and dark themes */
     @apply prose-code:text-black;
     /* Bold text color for light and dark themes */
-    @apply prose-strong:text-black dark:prose-strong:text-white;
+    @apply prose-strong:text-black prose-strong:text-white;
     /* Ordered list text color for light and dark themes */
     @apply prose-ol:text-neutral-500 prose-ul:text-neutral-500 prose-li:text-neutral-500;
     /* Headings text color and font styling for light and dark themes */
-    @apply prose-headings:text-black dark:prose-headings:text-white  prose-headings:text-base text-xs;
+    @apply prose-headings:text-black prose-headings:text-white  prose-headings:text-base text-xs;
   }
 }
 
@@ -31,17 +31,50 @@
   --color-base-light:#eeede8; 
   --color-base-medium:#f7f7f5;
 }
+/* Add this to your global CSS file or in a <style> tag */
 
-/* CSS */
+/* Force light mode colors regardless of system preference */
 :root {
- /* Typography stylistic sets for Inter */
-  font-feature-settings: "tnum" 1, "zero" 1, "cv01" 1, "cv09" 1, "cv02" 1, "cv03" 1, "cv04" 1, "ss08" 1, "dlig" 1, "cv06" 1, "cv10" 1, "cv13" 1;
+  color-scheme: light only;
   --font-serif: 'Instrument Serif', serif;
   --font-sans: 'Inter', sans-serif;
   --color-base-light: #eeede8;
   --color-base-medium: #f7f7f5;
 }
 
+/* Override any potential dark mode styles */
+html {
+  color-scheme: light only;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Force override common dark mode elements */
+* {
+  border-color: rgb(229 229 229) !important; /* neutral-200 */
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Specific overrides for your component classes */
+.text-neutral-400 {
+  color: rgb(16 16 16) !important;
+}
+
+.border-neutral-200 {
+  border-color: rgb(229 229 229) !important;
+}
+
+.bg-base-medium {
+  background-color: #f7f7f5 !important;
+}
+
+.bg-base-light {
+  background-color: #eeede8 !important;
+}
 @supports (font-variation-settings: normal) {
   /* Use variable font if supported */
   :root {
