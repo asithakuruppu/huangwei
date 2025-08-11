@@ -7,10 +7,10 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 <footer>
   <footer class="text-xs pb-8 pt-48">
     <Wrapper
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:max-w-6xl xl:max-w-7xl mx-auto"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:max-w-6xl xl:max-w-7xl mx-autos"
     >
-      <div class="gap-4 flex flex-col">
-        <!-- <div class="gap-1 flex flex-col">
+      <!-- <div class="gap-4 flex flex-col">
+        <div class="gap-1 flex flex-col">
           <Text tag="p" variant="textSM" class="font-serif italic text-black"
             >Follow us on</Text
           >
@@ -20,20 +20,31 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
             href="#_"
             class="text-neutral-500 underline">Twitter</Text
           >
-        </div>
-        <div class="gap-1 flex flex-col">
-          <Text tag="p" variant="textSM" class="font-serif italic text-black"
-            >Add us on</Text
-          >
-          <Text
-            tag="a"
-            variant="textXS"
-            href="#_"
-            class="text-neutral-500 underline">LinkedIn</Text
-          >
-        </div>
-      </div> -->
-        <!--<div>
+        </div> -->
+      <div class="gap-4 flex flex-col">
+        <Text
+          tag="p"
+          variant="textBase"
+          class="flex flex-col text-black font-serif gap-1 italic"
+          >Copyright
+          <span class="text-neutral-500 text-xs"
+            >© 2025 – <span id="current-year"></span></span
+          ></Text
+        >
+      </div>
+      <div class="gap-1 flex flex-col">
+        <Text tag="p" variant="textSM" class="font-serif italic text-black"
+          >Developed by</Text
+        >
+        <Text
+          tag="a"
+          variant="textXS"
+          href="https://atelieroptimatix.com"
+          class="text-neutral-500 underline">Atelier Optimatix PVT LTD</Text
+        >
+      </div>
+    </Wrapper>
+    <!--<div>
         <Text tag="p" variant="textBase" class="font-serif italic text-black"
           >Privacy</Text
         >
@@ -68,26 +79,16 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
           see. Thanks for visiting our little corner of the internet.
         </Text>
       </div> -->
-        <Text
-          tag="p"
-          variant="textBase"
-          class="flex flex-col text-black font-serif gap-1 italic"
-          >Copyright
-          <span class="text-neutral-500 text-xs"
-            >© 2025 – <span id="current-year"></span></span
-          ></Text
-        >
-      </div>
-    </Wrapper>
+    >
   </footer>
-
-  <script type="module">
-    document.addEventListener("DOMContentLoaded", () => {
-      const yearElement = document.getElementById("current-year");
-      const currentYear = new Date().getFullYear();
-      if (yearElement) {
-        yearElement.textContent = currentYear;
-      }
-    });
-  </script>
 </footer>
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const yearElement = document.getElementById("current-year");
+    const currentYear = new Date().getFullYear();
+    if (yearElement) {
+      yearElement.textContent = currentYear;
+    }
+  });
+</script>

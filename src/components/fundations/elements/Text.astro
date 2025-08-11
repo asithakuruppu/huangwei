@@ -53,6 +53,7 @@ const {
   tag: Tag = "p", // Defaults to paragraph tag
   variant = "textMD", // Defaults to textMD style variant
   class: className = "", // No additional classes by default
+  href: href = "#_",
   ...rest // Collect remaining props
 } = Astro.props;
 
@@ -63,7 +64,7 @@ const baseClasses = textStyles[variant] || textStyles.textMD; // Fallback to tex
 const combinedClasses = `${baseClasses} ${className}`.trim();
 ---
 
-<Tag class={combinedClasses} {...rest}>
+<Tag href={href} class={combinedClasses} {...rest}>
   <slot name="left-icon" />
   <slot />
   <slot name="right-icon" />
