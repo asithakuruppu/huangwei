@@ -24,33 +24,38 @@
 }
 
 @theme {
-  /* Typography */
-  --font-serif: Helvetica, Instrument Serif, serif;
-  --font-sans: Helvetica, Inter, sans-serif;
-  /* Colors */
-  --color-base-light:#eeede8; 
-  --color-base-medium:#f7f7f5;
+/* Typography */
+ --font-serif: Helvetica, Instrument Serif, serif;
+ --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/* Colors */
+ --color-base-light:#eeede8;
+ --color-base-medium:#f7f7f5;
 }
-/* Add this to your global CSS file or in a <style> tag */
 
-/* Force light mode colors regardless of system preference */
 :root {
-  color-scheme: light only;
-  --font-serif: 'Helvetica', 'Instrument Serif', serif;
-  --font-sans: 'Helvetica', 'Inter', sans-serif;
-  --color-base-light: #eeede8;
-  --color-base-medium: #f7f7f5;
+color-scheme: light only;
+--font-serif: Helvetica, 'Instrument Serif', serif;
+--font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+--color-base-light: #eeede8;
+--color-base-medium: #f7f7f5;
 }
 
+/* Apply thin weight globally or to specific elements */
+body {
+  font-family: var(--font-sans);
+  font-weight: 100; /* Very thin */
+  background-color: white;
+  color: black;
+}
 /* Override any potential dark mode styles */
 html {
   color-scheme: light only;
 }
 
-body {
+/* body {
   background-color: white;
   color: black;
-}
+} */
 
 /* Force override common dark mode elements */
 * {
