@@ -25,8 +25,8 @@
 
 @theme {
   /* Typography */
-  --font-serif: Instrument Serif, serif;
-  --font-sans: Inter, sans-serif;
+  --font-serif: Helvetica, Instrument Serif, serif;
+  --font-sans: Helvetica, Inter, sans-serif;
   /* Colors */
   --color-base-light:#eeede8; 
   --color-base-medium:#f7f7f5;
@@ -36,8 +36,8 @@
 /* Force light mode colors regardless of system preference */
 :root {
   color-scheme: light only;
-  --font-serif: 'Instrument Serif', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Helvetica', 'Instrument Serif', serif;
+  --font-sans: 'Helvetica', 'Inter', sans-serif;
   --color-base-light: #eeede8;
   --color-base-medium: #f7f7f5;
 }
@@ -78,7 +78,7 @@ body {
 @supports (font-variation-settings: normal) {
   /* Use variable font if supported */
   :root {
-    font-family: InterVariable, sans-serif;
+    font-family: Helvetica, InterVariable, sans-serif;
   }
 }
 
